@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" ng-app="pokemonApp">
+<head>
+  <meta charset="utf-8">
+  <title>Pokedex</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/services.js"></script>
+</head>
+<body>
+
+  <header class="container page-header">
+    <h1>POKEDEX</h1>
+  </header>
+
+
+  <div class="container" ng-controller="pokemonListCtrl">
+
+    <div class="row">
+      <div class="col-xs-8 pokemon-container">
+        <div class="row">
+        <div ng-repeat="pokemon in pokemons" >
+          <div class="col-md-4 col-sm-6" >
+            <div class="pokemon-one"  ng-click="showMe(pokemon.pkdx_id)">
+              <img class="img-responsive center-block pokemon-one-img" src="http://pokeapi.co/media/img/{{pokemon.pkdx_id}}.png" />
+              <h3 class="pokemon-name text-center">{{pokemon.name}}</h3>
+              <ul class="row pokemon-types">
+                <li class="col-xs-6" ng-repeat="type in pokemon.types">
+                  <div class="type text-center {{type.name}}">{{type.name}}</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+        <button class="btn btn-primary" href="#" ng-show="true"
+          ng-click="loadMore()">Load More</button>
+        <button class="btn btn-primary" href="#" ng-show="hasMoreToShow()"  ng-click="showMe()">Det</button>
+      </div>
+      <div class="col-xs-4 fixed">
+        <div class="pokemon-detailed pokemon-one" ng-hide="showme">
+          <img class="img-responsive center-block" src="http://pokeapi.co/media/img/{{detailPokemon.pkdx_id}}.png" />
+          <h3 class="pokemon-name-id text-center">{{detailPokemon.name}} {{detailPokemon.format_id}}</h3>
+          <div class="pokemon-info">
+          <table class="table table-bordered">
+            <tr>
+              <td class="text-center">Type</td>
+              <td class="text-center">
+                <span ng-repeat="type in detailPokemon.types">{{type.name}}<span ng-if="! $last">, </span></span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">Attack</td>
+              <td class="text-center">{{detailPokemon.attack}}</td>
+            </tr>
+            <tr>
+              <td class="text-center">Defense</td>
+              <td class="text-center">{{detailPokemon.defense}}</td>
+            </tr>
+            <tr>
+              <td class="text-center">HP</td>
+              <td class="text-center">{{detailPokemon.hp}}</td>
+            </tr>
+            <tr>
+              <td class="text-center">SP Attack</td>
+              <td class="text-center">{{detailPokemon.sp_atk}}</td>
+            </tr>
+            <tr>
+              <td class="text-center">SP Defence</td>
+              <td class="text-center">{{detailPokemon.sp_def}}</td>
+            </tr>
+            <tr>
+              <td class="text-center">Speed</td>
+              <td class="text-center">{{detailPokemon.speed}}</td>
+            </tr>
+            <tr>
+              <td class="text-center">Weight</td>
+              <td class="text-center">{{detailPokemon.weight}}</td>
+            </tr>
+            <tr>
+              <td class="text-center">Total moves</td>
+              <td class="text-center">{{detailPokemon.total_moves}}</td>
+            </tr>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container">
+    <div class="col-xs-9 text-right">
+    <p>&copy; by Andrew Lupa</p>
+  </footer>
+
+
+<!--
+  <div class="view-container">
+    <div ng-view class="view-frame"></div>
+  </div>
+-->
+</body>
+</html>

@@ -1,0 +1,189 @@
+.page-header {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 5px;
+}
+
+h1 {
+  margin-top: 10px;
+}
+
+footer {
+  border-top: 1px solid #a8a8a8;
+  padding: 20px;
+  padding-top: 5px;
+  margin-top: 40px;
+  color: #a8a8a8;
+}
+
+.pokemon-one {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.pokemon-container .row {
+  margin: 0px;
+}
+
+.pokemon-types {
+  list-style-type: none;
+  padding: 1px;
+  overflow: hidden;
+}
+
+li {
+  display: inline-block;
+}
+
+.col-xs-6 {
+  float: left;
+  padding: 0px;
+}
+
+.pokemon-one-img {
+  height: 120px;
+}
+
+.type {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #cdcfcd;
+  border-radius: 5px;
+}
+
+.fixed {
+  position: fixed;
+  right: 60px;
+}
+
+.pokemon-info {
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+.pokemon-name-id {
+  margin-top: 0px;
+}
+
+.pokemon-info.table > tr > td {
+  padding: 2px;
+  font-size: 12px;
+}
+
+/* pokemon types colors */
+
+.normal {
+  background-color: #dcfeff;
+  border-color: #dcfeff;
+}
+
+.fighting {
+  background-color: #fbb253;
+  border-color: #fbb253;
+}
+
+.flying {
+  background-color: #78f9fc;
+  border-color: #78f9fc;
+}
+
+.poison {
+  background-color: #b590d3;
+  border-color: #b590d3;
+}
+
+.ground {
+  background-color: #aca4b7;
+  border-color: #aca4b7;
+}
+
+.rock {
+  background-color: #b97641;
+  border-color: #b97641;
+}
+
+.bug {
+  background-color: #fa78fc;
+  border-color: #fa78fc;
+}
+
+.ghost {
+  background-color: #e5f6b9;
+  border-color: #e5f6b9;
+}
+
+.steel {
+  background-color: #aaaaaa;
+  border-color: #aaaaaa;
+}
+
+.fire {
+  background-color: #ff6c23;
+  border-color: #ff6c23;
+}
+
+.water {
+  background-color: #63bcf2;
+  border-color: #63bcf2;
+}
+
+.grass {
+  background-color: #33af12;
+  border-color: #33af12;
+}
+
+.electric {
+  background-color: #f7ff32;
+  border-color: #f7ff32;
+}
+
+.ice {
+  background-color: #a4e4e5;
+  border-color: #a4e4e5;
+}
+
+.dragon {
+  background-color: #6da02c;
+  border-color: #6da02c;
+}
+
+.dark {
+  background-color: #9a4b5f;
+  border-color: #9a4b5f;
+}
+
+.fairy {
+  background-color: #f95c84;
+  border-color: #f95c84;
+}
+
+.unknown {
+  background-color: #e7f98c;
+  border-color: #e7f98c;
+}
+
+.shadow {
+  background-color: #ae2a31;
+  border-color: #ae2a31;
+}
+
+.psychic {
+  background-color: #f77d6a;
+  border-color: #f77d6a;
+}
+
+
+
+
+
+
+
+
+
+
