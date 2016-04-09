@@ -1,3 +1,3 @@
 # pokedex
 
-Start with "index.html".
+Start with `index.html` in your browser.
