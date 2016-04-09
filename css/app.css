@@ -1,3 +1,15 @@
+.preloader {
+  padding: 50px;
+  background: url('../img/Preloader.gif') no-repeat 50% 50% transparent;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 .page-header {
   margin-top: 0px;
   margin-bottom: 0px;

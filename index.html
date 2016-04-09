@@ -6,28 +6,21 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/animations.css">
-
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/services.js"></script>
 </head>
-<body>
+<body ng-controller="pokemonListCtrl">
 
   <header class="container page-header">
     <h1>POKEDEX</h1>
   </header>
 
+  <!-- main container start -->
+  <div class="container">
 
-  <div class="container" ng-controller="pokemonListCtrl">
+    <!-- preloader -->
+    <div ng-hide="dataLoaded" class="preloader center-block vertical-center"></div>
 
-    <div class="row">
+    <!-- pokemons table start-->
+    <div class="row" ng-show="dataLoaded">
       <div class="col-xs-8 pokemon-container">
         <div class="row">
         <div ng-repeat="pokemon in pokemons" >
@@ -44,10 +37,14 @@
           </div>
         </div>
         </div>
-        <button class="btn btn-primary" href="#" ng-show="true"
-          ng-click="loadMore()">Load More</button>
-        <button class="btn btn-primary" href="#" ng-show="hasMoreToShow()"  ng-click="showMe()">Det</button>
+        <button class="btn btn-primary center-block" href="#" ng-show="true" ng-click="loadMore()">
+          <span ng-hide="loading">Load More</span>
+          <span ng-show="loading">Loading...</span>
+        </button>
       </div>
+      <!-- pokemons table end -->
+
+      <!-- detailed pokemon start -->
       <div class="col-xs-4 fixed">
         <div class="pokemon-detailed pokemon-one" ng-hide="showme">
           <img class="img-responsive center-block" src="http://pokeapi.co/media/img/{{detailPokemon.pkdx_id}}.png" />
@@ -96,19 +93,24 @@
           </div>
         </div>
       </div>
+      <!-- detailed pokemon end -->
+
     </div>
   </div>
+  <!-- main container end -->
 
-  <footer class="container">
+  <footer class="container" ng-show="dataLoaded">
     <div class="col-xs-9 text-right">
     <p>&copy; by Andrew Lupa</p>
   </footer>
 
-
-<!--
-  <div class="view-container">
-    <div ng-view class="view-frame"></div>
-  </div>
--->
+  
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
 </body>
 </html>

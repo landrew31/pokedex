@@ -12,6 +12,8 @@ pokemonControllers.controller('pokemonListCtrl', ['$scope', '$http', function($s
       $scope.pokemons = $scope.pokemons.concat($scope.pokemonsPortion);
       $scope.has_more = response.data.meta.next;
       $scope.offset = response.data.meta.offset;
+      $scope.loading = false;
+      $scope.dataLoaded = true;
     });
   };
 
@@ -25,6 +27,7 @@ pokemonControllers.controller('pokemonListCtrl', ['$scope', '$http', function($s
   };
 
   $scope.loadMore = function() {
+    $scope.loading = true;
     $scope.next_page = '&offset='+($scope.offset + 12).toString();
     $scope.loadData();
   };
@@ -41,9 +44,6 @@ pokemonControllers.controller('pokemonListCtrl', ['$scope', '$http', function($s
           var fullData = $scope.pokemons[i];
         };
       };
-      //$scope.uri = "/api/v1/pokemon/" + id;
-      //$http.get($scope.host + $scope.uri).then(function(response) {
-        //var fullData = response.data;
       $scope.detailPokemon['name'] = fullData.name;
       $scope.detailPokemon['format_id'] = $scope.setPokemonId(fullData.pkdx_id);
       $scope.detailPokemon['pkdx_id'] = fullData.pkdx_id;
@@ -70,6 +70,8 @@ pokemonControllers.controller('pokemonListCtrl', ['$scope', '$http', function($s
 
   $scope.host = "http://pokeapi.co";
   $scope.id = 0;
+  $scope.loading = false;
+  $scope.dataLoaded = false;
   $scope.pokemons = [];
   $scope.detailPokemon = {};
   $scope.pokemonTypes = [];
